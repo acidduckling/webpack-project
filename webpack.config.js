@@ -1,30 +1,30 @@
+const path = require('path');
+
 module.exports = {
-  entry: [
-    './src/index.js'
-  ],
+  entry: ['./src/index.js'],
   output: {
-    path: __dirname + '/dist',
+    path: path.join(__dirname, '/dist'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: '/node_modules/',
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.(js|jsx)$/,
         exclude: '/node_modules/',
-        use: ['eslint-loader']
-      }
-    ]
+        use: ['eslint-loader'],
+      },
+    ],
   },
   resolve: {
-    extensions: ['.js', '.jsx']
-  }
-}
+    extensions: ['.js', '.jsx'],
+  },
+};
